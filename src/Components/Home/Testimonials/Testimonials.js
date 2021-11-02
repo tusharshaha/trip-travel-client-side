@@ -8,7 +8,7 @@ const Testimonials = () => {
         { id: 3, author: 'Rabi Chowdhuri' },
     ]
     return (
-        <div className='text-center'>
+        <div className='text-center mb-5'>
             <Container>
                 <div className='text-uppercase mb-4'>
                     <h2 className='fw-bold'>Testimonials</h2>

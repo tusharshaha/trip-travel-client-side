@@ -1,0 +1,11 @@
+.link-container a{
+    color: orange;
+    font-size: 24px;
+    margin: 10px;
+}
+.link-container a:hover{
+    color: rgb(204, 134, 4);
+}
+.link-container{
+    margin-top: 15px;
+}

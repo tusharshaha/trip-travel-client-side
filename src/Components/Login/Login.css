@@ -1,0 +1,33 @@
+.login-form{
+    background-image: url('https://i.pinimg.com/564x/40/86/94/40869457b98a5992df45b43bf2651a94.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.384);
+    background-blend-mode: darken;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.google-login{
+    border: 3px solid orange;
+    border-radius: 10px;
+    padding: 50px 30px;
+    text-align: center;
+    color: orange;
+}
+.google-login .singin-btn{
+    margin-top: 25px;
+    border: 2px solid orange;
+    color: orange;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.027);
+}
+.google-login .singin-btn:hover{
+    background-color: orange;
+    color: white;
+    transition: 0.4s;
+}
