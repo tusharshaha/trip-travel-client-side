@@ -8,7 +8,9 @@
     background-blend-mode: darken;
     height: 100%;
     margin-bottom: 80px;
-    
+}
+.navbar{
+    margin-bottom: 50px;
 }
 .icon-container{
     display: flex;

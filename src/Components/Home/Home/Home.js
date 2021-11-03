@@ -7,14 +7,14 @@ import Testimonials from '../Testimonials/Testimonials';
 import TopSection from '../TopSection/TopSection'
 const Home = () => {
     return (
-        <>
+        <div>
             <Header></Header>
             <TopSection></TopSection>
             <Places></Places>
             <About></About>
             <Testimonials></Testimonials>
             <Footer></Footer>
-        </>
+        </div>
     );
 };
 

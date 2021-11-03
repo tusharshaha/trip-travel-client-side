@@ -6,7 +6,8 @@ import './Header.css'
 const Header = () => {
     const { user,logOut } = useAuth()
     return (
-        <Navbar sticky="top" expand="lg" bg="dark" variant="dark">
+        <div className='navbar'>
+        <Navbar  expand="lg" fixed='top' bg="dark" variant="dark">
             <Container>
                 <Navbar.Brand href="#home" >
                     <h3 className='site-title'>TripTravel</h3>
@@ -35,6 +36,7 @@ const Header = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+        </div>
     );
 };
 
