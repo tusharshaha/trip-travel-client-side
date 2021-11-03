@@ -9,7 +9,7 @@ const About = () => {
     ]
     return (
         <div className='text-center text-white about-section py-5 '>
-            <Container>
+            <Container className='py-5'>
                 <div className='text-uppercase mb-4'>
                     <h2 className='fw-bold'>why choose us?</h2>
                     <p>A brand Name You can trust and rely on</p>
