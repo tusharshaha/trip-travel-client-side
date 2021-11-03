@@ -4,12 +4,12 @@ import { Route, Redirect } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const { user} = useAuth()
-    if (!user.email) {
+    const { user, isLoading } = useAuth()
+    if (isLoading) {
         return <div className='text-center mt-3'>
             <Spinner animation="grow" variant="warning" />
         </div>
-    }else{
+    }
     return (
         <Route
             {...rest}
@@ -25,7 +25,7 @@ const PrivateRoute = ({ children, ...rest }) => {
                     />)}>
         </Route>
     );
-    }
-};
+}
+
 
 export default PrivateRoute;

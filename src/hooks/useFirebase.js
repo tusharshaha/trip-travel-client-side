@@ -11,7 +11,6 @@ const useFirebase = () => {
     const googleSignIn = () => {
         setIsLoading(true)
         return signInWithPopup(auth, googleProvider)
-
     }
     useEffect(() => {
         setIsLoading(true)
@@ -21,8 +20,8 @@ const useFirebase = () => {
             } else {
                 setUser({})
             }
+            setIsLoading(false)
         });
-        setIsLoading(false)
     }, [auth])
     const logOut = () => {
         setIsLoading(true)

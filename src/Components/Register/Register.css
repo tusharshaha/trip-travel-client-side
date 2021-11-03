@@ -1,0 +1,25 @@
+.register-place{
+    text-align: center;
+}
+.register-place form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.register-place form input,input[type=submit],input[type=date]{
+    width: 90%;
+    margin: 7px 0;
+    padding: 5px 10px;
+    border: 2px solid orange;
+    border-radius: 5px;
+}
+.register-place form input[type=submit]{
+    background-color: orange;
+    border: none;
+    color: white;
+    font-weight: 500;
+}
+.register-place form input[type=submit]:hover{
+    background-color: rgb(224, 149, 10);
+}

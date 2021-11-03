@@ -2,12 +2,15 @@ import React from 'react';
 import { Container, Nav, Navbar,Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import './Header.css'
 const Header = () => {
     const { user,logOut } = useAuth()
     return (
         <Navbar sticky="top" expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">TripTravel</Navbar.Brand>
+                <Navbar.Brand href="#home" >
+                    <h3 className='site-title'>TripTravel</h3>
+                </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav className="ms-auto text-center">

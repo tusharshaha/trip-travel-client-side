@@ -1,23 +1,91 @@
-import React from 'react';
-import { Spinner } from 'react-bootstrap';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Container, Table, Button } from 'react-bootstrap';
+import './MyOrder.css'
 import useAuth from '../../hooks/useAuth';
-import Footer from '../Home/Footer/Footer';
 import Header from '../Home/Header/Header';
+import swal from 'sweetalert';
 
 const MyOrder = () => {
-    const {isLoading} = useAuth()
-    if(isLoading){
-        return <div className='text-center mt-3'>
-        <Spinner animation="grow" variant="warning" />
-    </div>
+    const { user } = useAuth()
+    const [orders, setOrders] = useState([])
+    useEffect(() => {
+        fetch(`https://gentle-cove-60812.herokuapp.com/myOrder/${user?.email}`)
+            .then(res => res.json())
+            .then(data => setOrders(data))
+    }, [user])
+    const handleDelete = (id) => {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover your order!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    axios.delete(`https://gentle-cove-60812.herokuapp.com/places/${id}`)
+                        .then(res => {
+                            if (res.data.deletedCount > 0) {
+                                swal("Good job!", "Successfuly deleted Your order", "success");
+                                const remaining = orders.filter(order => order._id !== id)
+                                setOrders(remaining)
+                            }
+                        });
+                } else {
+                    swal("Opps!", "Your Order isn't deleted!", "warning");
+                }
+            });
     }
     return (
         <>
             <Header></Header>
-            <div>
-                <h3>hello hunny bunny</h3>
+            <div className='myOrder'>
+                <Container>
+                    <h3 className='mb-4'>My Orders</h3>
+                    <Table responsive striped bordered hover size="sm">
+                        <thead>
+                            <tr>
+                                <th>SL</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Order Date</th>
+                                <th>Address</th>
+                                <th>Place Name</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        {
+                            orders?.map((order, index) =>
+                                <tbody key={index}>
+                                    <tr>
+                                        <td>{index + 1}</td>
+                                        <td>{order.userName}</td>
+                                        <td>{order.email}</td>
+                                        <td>{order.date}</td>
+                                        <td>{order.address}</td>
+                                        <td>{order.orderName}</td>
+                                        <td>{order.price}</td>
+                                        {
+                                            order.status === 'Pending' ?
+                                                <td className='text-danger'>{order.status} <Button onClick={() => handleDelete(order._id)} variant="danger" size="sm" className='ms-3'>
+                                                    Delete
+                                                </Button></td> :
+                                                <td className='text-success'>{order.status} <Button onClick={() => handleDelete(order._id)} variant="danger" size="sm" className='ms-3'>
+                                                    Delete
+                                                </Button></td>
+                                        }
+
+                                    </tr>
+                                </tbody>
+                            )
+                        }
+
+                    </Table>
+                </Container>
             </div>
-            <Footer></Footer>
         </>
     );
 };

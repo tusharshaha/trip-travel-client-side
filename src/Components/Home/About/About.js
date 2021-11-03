@@ -17,7 +17,7 @@ const About = () => {
                 <Row xs={1} sm={2} md={3} lg={3}>
                     {
                         aboutInfo.map(info =>
-                            <Col key={info.id}>
+                            <Col data-aos='fade-in' key={info.id}>
                                 <div className='icon-container'>
                                     <i className={info.icon}></i>
                                 </div>

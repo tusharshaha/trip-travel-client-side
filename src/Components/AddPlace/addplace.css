@@ -1,6 +1,13 @@
 .add-place{
+    background-image: url('https://i.pinimg.com/564x/0f/19/ec/0f19ecb19dab94e929f49e900b217841.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.192);
+    background-blend-mode: darken;
+    height: 700px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 .add-place form{
     display: flex;
@@ -26,4 +33,9 @@
 }
 .add-place form input[type=submit]:hover{
     background-color: rgb(224, 149, 10);
+}
+@media only screen and (max-width:580px) {
+    .add-place form{
+        width: 70%;
+    }
 }
