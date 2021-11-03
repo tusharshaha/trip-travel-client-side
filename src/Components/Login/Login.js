@@ -24,7 +24,7 @@ const Login = () => {
             <div className='login-form'>
                 <div className='google-login'>
                     <h3>Sign In With Google</h3>
-                    <button className='singin-btn' onClick={handleGoogleSignIn}>Google Sign In </button>
+                    <button className='singin-btn' onClick={handleGoogleSignIn}><i className="fab fa-google fa-2x"></i> Google Sign In </button>
                 </div>
             </div>
             <Footer></Footer>
