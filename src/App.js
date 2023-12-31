@@ -18,7 +18,8 @@ function App() {
     AOS.init({
       duration: 1000,
       easing: 'ease-in-sine',
-      delay: 100
+      delay: 100,
+      once: true
     })
   }, [])
   return (

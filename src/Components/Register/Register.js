@@ -16,7 +16,7 @@ const Register = () => {
     const [date, setDate] = useState('')
     const [address, setAddress] = useState('')
     useEffect(() => {
-        fetch(`https://gentle-cove-60812.herokuapp.com/places/${id}`)
+        fetch(`https://trip-travel.vercel.app/places/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [id])
@@ -41,7 +41,7 @@ const Register = () => {
         })
             .then((willAdd) => {
                 if (willAdd) {
-                    axios.post('https://gentle-cove-60812.herokuapp.com/myOrder', placeOrder)
+                    axios.post('https://trip-travel.vercel.app/myOrder', placeOrder)
                         .then(res => {
                             if (res.data.insertedId) {
                                 swal("Good job!", "Successfuly Place Your Order", "success");

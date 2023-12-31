@@ -5,7 +5,7 @@ import './Places.css'
 const Places = () => {
     const [places, setPlaces] = useState([])
     useEffect(() => {
-        fetch('https://gentle-cove-60812.herokuapp.com/places')
+        fetch('https://trip-travel.vercel.app/places')
             .then(res => res.json())
             .then(data => setPlaces(data))
     }, [])

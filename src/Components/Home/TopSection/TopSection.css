@@ -34,6 +34,9 @@
     right: 0px;
 }
 .search-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: orange;
     border: none;
     color: #fff;

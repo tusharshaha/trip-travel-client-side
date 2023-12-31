@@ -8,7 +8,7 @@ import Footer from '../Home/Footer/Footer';
 const AddPlace = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data => {
-        axios.post('https://gentle-cove-60812.herokuapp.com/places', data)
+        axios.post('https://trip-travel.vercel.app/places', data)
         .then(res=>{
             if(res.data.insertedId){
                 swal("Good job!", "Successfuly Added Your Place", "success");
